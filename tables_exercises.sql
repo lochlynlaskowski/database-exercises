@@ -4,7 +4,7 @@ describe employees;
 
 
 -- Which table(s) do you think contain a numeric type column?
--- salaries
+-- all tables within
 
 -- Which table(s) do you think contain a string type column? 
 -- all tables within
@@ -13,7 +13,7 @@ describe employees;
 -- dept_emp, dept_manager, employyes, salaries, titles
 
 -- What is the relationship between the employees and the departments tables?
-
+-- dept_emp uses emp_no and dept_no
 
 -- Show the SQL Show the SQL that created the dept_manager table. Write the SQL it takes to show this as your exercise solution.
 
