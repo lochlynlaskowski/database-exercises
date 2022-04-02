@@ -30,6 +30,8 @@ FROM employees
 WHERE last_name 
 LIKE 'E%';
 
+-- 7330 employees with the first letter of the last name E 
+
 SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name 
@@ -37,12 +39,14 @@ LIKE 'E%'
 OR last_name
 LIKE '%E';
 
+-- 30723 employees that last name starts or ends with 'E' 
+
 SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name 
 LIKE '%E';
 
--- follow up: why are they all producing 1000 records?? need DISTINCT?
+-- 24292 employees last name ends with the letter 'E'
 
  SELECT emp_no, first_name, last_name, hire_date
  FROM employees
@@ -65,7 +69,7 @@ FROM employees
 WHERE last_name 
 LIKE '%Q%';
 
--- there are 1000 employees with the letter Q in their last name
+-- there are 1873 employees with the letter Q in their last name
 
 SELECT emp_no, first_name, last_name
 FROM employees
@@ -73,7 +77,6 @@ WHERE last_name
 LIKE '%Q%'
 '%QU%';
 -- need to figure out how to exclude
- 
  
  
  
