@@ -75,8 +75,7 @@ SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name 
 LIKE '%Q%'
-'%QU%';
--- need to figure out how to exclude
+AND last_name NOT LIKE '%QU%';
  
  
  

@@ -75,8 +75,10 @@ SELECT emp_no, first_name, last_name
 FROM employees
 WHERE last_name 
 LIKE '%Q%'
-AND last_name NOT LIKE '%QU%';
-
+'%QU%';
+-- need to figure out how to exclude
+ 
+ 
 SELECT emp_no, first_name, last_name
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya')
@@ -127,4 +129,38 @@ ORDER BY hire_date DESC;
  -- 346 rows returned, oldest employee Yinghua Dredge
  -- newest employee Steve Strehl assuming employee number is indicative
  -- of time frame hired if the same hire date occured -- 346 results 
+
+SELECT CONCAT(first_name, ' ', last_name) full_name
+FROM employees
+WHERE last_name LIKE 'E%E';
+
+SELECT UPPER(CONCAT(first_name, ' ', last_name)) full_name
+FROM employees
+WHERE last_name LIKE 'E%E';
+
+SELECT emp_no, first_name, last_name, hire_date, 
+DATEDIFF(NOW(), hire_date) days_with_company
+FROM employees
+WHERE YEAR(hire_date) 
+BETWEEN '1990'  AND  '1999'
+AND (MONTH(hire_date) = 12)
+AND (DAY(hire_date) =25);
+ 
+SELECT MIN(salary), MAX(salary) 
+FROM salaries
+WHERE to_date > CURDATE();
+
+SELECT LOWER(CONCAT(
+SUBSTR(first_name,1,1),
+SUBSTR(last_name,1,4),
+"_",
+SUBSTR(birth_date,6,2), 
+SUBSTR(birth_date,3,2) ))
+AS
+username, first_name, last_name, birth_date
+FROM employees;
+
+
+ 
+
 
